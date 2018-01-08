@@ -4,8 +4,8 @@ layout: post
 title: All Posts
 published: true
 
-permalink: posts/
-description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+permalink: blog/
+description: "Blog o altcoin tradingu - všechny příspěvky o tradingu, strategii a technické analýze."
 
 tags: ["test", "lorem"]
 feature: "/img/blog01.jpg"

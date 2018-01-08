@@ -1,0 +1,50 @@
+
+<div class="row blog">
+
+  {% for item in site.strategy limit: 4 %}
+
+  <div class="col-md-3 col-sm-3 xs-margin-bottom-ten">
+    <div class="blog-post">
+      <div class="blog-post-images">
+        <a href="/strategie/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}">
+          <img src="{{ item.feature }}" alt="{{ item.title }}">
+        </a>
+      </div>
+        <div class="post-details">
+          <a href="/strategie/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}" class="post-title">
+           {{ item.title }}
+          </a>
+          <span class="post-author">Posted by {% if item.author %}{{ item.author }}{% else %}{{ site.author }}{% endif %} | {{ item.date | date: "%d.%m.%Y" }}</span>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="separator-line"></div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div><!-- row blog -->
+
+<div class="row blog">
+
+  {% for item in site.strategy limit: 4 offset: 4 %}
+
+  <div class="col-md-3 col-sm-3 xs-margin-bottom-ten">
+    <div class="blog-post">
+      <div class="blog-post-images">
+        <a href="/strategie/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}">
+          <img src="{{ item.feature }}" alt="{{ item.title }}">
+        </a>
+      </div>
+        <div class="post-details">
+          <a href="/strategie/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}" class="post-title">
+           {{ item.title }}
+          </a>
+          <span class="post-author">Posted by {% if item.author %}{{ item.author }}{% else %}{{ site.author }}{% endif %} | {{ item.date | date: "%d.%m.%Y" }}</span>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="separator-line"></div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div><!-- row blog -->

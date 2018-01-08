@@ -1,0 +1,12 @@
+<nav v-bind:class="active" v-on:click.prevent class="col-md-8">
+  <h1 class="site-title">{{ site.title }}</h1>
+  <a href="#" class="home" v-on:click="makeActive('home')">Home</a>
+  <a href="#" class="coins" v-on:click="makeActive('coins')">Nové Kryptoměny</a>
+  <a href="#" class="fiat" v-on:click="makeActive('fiat')">Jak nakupovat</a>
+  <a href="#" class="card" v-on:click="makeActive('card')">Burzy</a>
+</nav>
+<nav class="col-md-4">
+  <a href="/blog/" class="hover">Blog</a>
+  <a href="/strategie/" class="hover">Strategie</a>
+  <a href="https://www.altcointrading.net?utm_source=altcointradingcz" class="hover">Anglická verze</a>
+</nav>

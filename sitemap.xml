@@ -1,15 +1,54 @@
 ---
+navi:
+ exclude: yes
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for link in site.links %}{% if link.external %}{% else %} 
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    {% for page in site.pages %}{% unless page.navi.exclude == true %}
     <url>
-        <loc>{{ site.url }}{{ link.url }}</loc>
-    </url>{% endif %}{% endfor %}
-    
-    {% for post in site.posts %}
+        <loc>{{ site.url }}{{ page.url }}</loc>
+        {% if page.enslug %}
+        <xhtml:link rel="alternate" hreflang="cs" href="{{ site.url }}{{ page.url }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.altcointrading.net/{{ page.enslug }}"/>
+        {% endif %}
+        {% if page.german %}
+        <xhtml:link rel="alternate" hreflang="de" href="https://de.altcointrading.net/{{ page.german }}"/>
+        {% endif %}
+    </url>
+    {% endunless %}{% endfor %}
+
+    {% for post in site.strategy %}
     <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
+        <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+        {% if post.enslug %}
+        <xhtml:link rel="alternate" hreflang="cs" href="{{ site.url }}{{ post.url }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.altcointrading.net/strategy/{{ post.enslug }}"/>
+        {% endif %}
+        {% if post.german %}
+        <xhtml:link rel="alternate" hreflang="de" href="https://de.altcointrading.net/strategy/{{ post.german }}"/>
+        {% endif %}
     </url>
     {% endfor %}
+
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+        {% if post.enslug %}
+        <xhtml:link rel="alternate" hreflang="cs" href="{{ site.url }}{{ post.url }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.altcointrading.net/{{ post.enslug }}"/>
+        {% endif %}
+        {% if post.german %}
+        <xhtml:link rel="alternate" hreflang="de" href="https://de.altcointrading.net/{{ post.german }}"/>
+        {% endif %}
+    </url>
+    {% endfor %}
+
+
+
 </urlset>

@@ -4,6 +4,21 @@ baseurl: ""
 
 author: "@_KarlvonBahnhof"
 
+collections:
+  press:
+    output: true
+    permalink: /:collection/:name
+  security:
+    output: true
+    permalink: /:collection/:slug
+  strategy:
+    output: true
+    permalink: /strategie/:slug
+  fibs:
+    output: true
+    permalink: /:collection/:slug
+
+
 ##### Stars
 stars:
   one: '<span class="star-rating">★☆☆☆☆</span>'

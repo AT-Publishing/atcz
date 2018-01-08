@@ -94,7 +94,9 @@ margin: 20px 0;
 }
 
 
-
+.containter-center {
+  text-align: center;
+}
 
 
 /**
@@ -176,7 +178,7 @@ body {
   }
 
 h1,h2,h3,h4,h5,h6 {
-  text-transform: capitalize;
+  text-transform: none;
   color: #000;
   letter-spacing: 1px;
   font-weight: 800;
@@ -228,7 +230,7 @@ a, a:visited {
 
 
 .sidebar {
-  border-top: 5px solid #a34ee6;
+  border-top: 5px solid #dbe91e;
 }
 
 
@@ -259,18 +261,21 @@ nav {
 }
 nav a {
   color: #000 !important;
-  font-weight: 400;
+    font-weight: 400;
     font-size: 14px;
-    letter-spacing: 1px;
-    padding: 40px 30px;
+    letter-spacing: -1px;
+    padding: 10px;
 }
 nav.home .home,
 nav.fiat .fiat,
 nav.card .card,
-nav.coins .coins {
-    background-color: #a244e6;
+nav.coins .coins,
+nav a.hover:hover {
+    background-color: #dbe91e;
     color: #fff !important;
 }
+
+
 
 
 
@@ -279,12 +284,13 @@ nav.coins .coins {
 margin-left: 0;
 }
 .blog {
-  padding: 50px;
+  padding: 10px;
   background: #fff;
 }
 .blog-post {
   text-align: left;
 }
+
 .post-title {
   font-size: 12px;
     letter-spacing: 2px;
@@ -333,10 +339,20 @@ table{
   border-top: 5px solid black;
  }
 .tbl-content{
-  height: 1300px;
+  height: 300px;
   overflow-x:auto;
   margin-top: 0px;
   border-bottom: 5px solid black;
+}
+.tbl-content a, .tbl-content a:visited {
+  outline: none;
+    color: #dee84b;
+    text-decoration: none;
+    background: #504d4dc9;
+    padding: 1px;
+}
+.blog-popular .tbl-content {
+  border-bottom: 5px solid #dce928;
 }
 th{
   padding: 20px 15px;
@@ -346,6 +362,9 @@ th{
   color: #fff;
   text-transform: uppercase;
   background: rgba(76, 76, 76, 0.14);
+}
+.blog-popular th {
+  background: rgba(76, 76, 76, 0.34);
 }
 td{
   padding: 15px;
@@ -358,9 +377,9 @@ td{
 }
 
 tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
+  background: #adadad;
+    color: #FFFFFF;
+    border-top: none;
 }
 
 
@@ -385,10 +404,11 @@ tr:hover td {
 /** BBE overrides */
 
 h1.site-title {
-    position: absolute;
-    left: 25px;
-    font-size: 3rem;
-    top: 10px;
+  position: absolute;
+  left: 25px;
+  font-size: 3rem;
+  top: -20px;
+  letter-spacing: -2px;
 }
 .single-sidebar article {
   padding: 20px
@@ -409,21 +429,26 @@ h1.site-title {
 
 
 a:focus, a:hover {
-  color: #a244e6;
+  color: #adadad;
 }
 
 .text-content a {
-  color: #a244e6;
-  border-bottom: 1px solid #a244e6;
+  color: inherit;
+    border-bottom: 2px solid #607D8B;
 }
 
 
 .single-content {
-    padding: 70px;
+    padding: 20px;
     border-top: 5px solid black;
     text-align: left;
     color: black;
     line-height: 1.7;
+}
+.single-content ol, .single-content ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .single-content h2 {
@@ -431,13 +456,53 @@ a:focus, a:hover {
     text-align: left;
     text-transform: uppercase;
 }
+.single-title span {
+  outline: none;
+    color: #dcea00;
+    text-decoration: none;
+    background: #484848;
+    padding: 3px 10px 6px;
+    text-transform: none !important;
+    letter-spacing: -1px;
+}
+
+.single-feature img {
+    vertical-align: middle;
+    margin: 5px 0 20px;
+    width: 100%;
+    height: auto;
+}
+
+
+.social {
+  padding: 20px 0;
+  text-align: center;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+}
+.social span {
+  display: inline-block;
+  margin-right: 20px;
+}
+.social span a {
+  color: black;
+  position: relative;
+    top: 10px;
+}
 
 .blog-post-images img {
     max-height: 215px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
 .twenty-posts img {
     max-height: 170px;
+}
+
+
+.inside-content img {
+  max-width: 100%
 }
 
 

@@ -6,8 +6,8 @@
 
     <nav class="home">
       <h1 class="site-title">{{ site.title }}</h1>
-      <a href="/" class="back"><< Back Home</a>
-      <a href="#" class="home">{{ page.title }}, {{ page.date | date: "%d %b %Y" }}</a>
+      <a href="/" class="home"><< Home</a>
+      <a href="#" class="back">{{ page.title }}</a> {{ page.date | date: "%d.%m.%Y" }}
     </nav>
 
    <div class="row no-gutters">
@@ -19,15 +19,120 @@
     <div class="col-md-8 col-sm-8 xs-margin-bottom-ten table-patch">
      <section class="single-content">
 
-       <span class="post-author">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %} | {{ page.date | date: "%d %b %Y" }}</span>
+       <h2 class="single-title"><span>{{ page.title }}</span></h2>
 
-       {{ content }}
+       <span class="post-author">Autor: {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %} | {{ page.date | date: "%d.%m.%Y" }}</span>
+
+       {% if page.feature %}
+       <div class="single-feature">
+         <img src="{{ page.feature }}" alt="{{ page.title }}">
+       </div>
+       {% endif %}
+
+       <div class="container-center">
+         <hr>
+          {{ site.ledger_728-90_animated }}
+         <hr>
+       </div>
+      <div class="inside-content">
+            {{ content | replace: 'Coinbase', site.ref.coinbase | replace: 'BitMEX', site.ref.bitmex | replace: 'Ledger wallet', site.ref.ledger | replace: '<a href="http', '<a rel="nofollow" target="_blank" href="http' }}
+      </div>
+
+      {% if page.stories %}
+            <p>
+              <a title="Autor {{ page.title }} {{ page.author }}" rel="nofollow" target="_blank" href="{{ page.author }}">Author</a> | Filed under <strong>{{ page.genres }}</strong> {% if page.tickers %}| Related tickers: <strong>{{ page.tickers }}</strong>{% endif %}
+            </p>
+
+            <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "name": "{{ page.author_name }}",
+              "url": "https://altcointrading.cz",
+              "sameAs": [
+                "{{ page.author }}"
+              ]
+            }
+            </script>
+
+       {% endif %}
+
+
+            <p class="social">
+              <span>
+                <img src="/images/share.png"/>
+              </span>
+              <span>
+                <a title="Sdílet na Facebooku" href="https://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="Facebook" target="_blank">
+                  <i class="fa fa-3x fa-facebook-square"></i>
+                </a>
+              </span>
+              <span>
+                <a title="Sdílet na Twitteru" href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="Twitter" target="_blank">
+                  <i class="fa fa-3x fa-twitter-square"></i>
+                </a>
+              </span>
+              <span>
+                <a title="Sdílet na Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="Linkedin" target="_blank">
+                  <i class="fa fa-3x fa-linkedin-square"></i>
+                </a>
+              </span>
+            </p>
+            <div class="container-center">
+
+            {{ site.ads.aadslong }}
+
+            </div>
+
+       {% if page.comments %}
+
+
+          <h3 class="post comment" id="disqus_embed" style="text-transform: none;text-align: left;">Diskuze k článku</h3>
+
+          <div id="disqus_thread"></div>
+          <script>
+
+          var disqus_config = function () {
+          this.page.url = "{{site.url}}{{page.url}}";  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = "{{page.enslug}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://altcointrading-cesko.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+          <p></p>
+
+          <hr>
+
+          {% else %}
+
+          <p>&nbsp;</p>
+
+          <hr>
+
+          <p>Komentáře nejsou povoleny.</p>
+
+          <hr>
+
+          {% endif %}
 
      </section>
     </div><!-- container -->
 
     </div><!-- main -->
 
+
+    <div class="row blog">
+      <div class="col-md-12 ">
+        <h4>Čti dál:</h4>
+      </div>
+    </div>
 
     {% include blog3.html %}
 
