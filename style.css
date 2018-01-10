@@ -68,8 +68,8 @@ border-radius:0 2px 2px 0;
 }
 
 nav.home .home,
-nav.fiat .fiat,
-nav.card .card,
+nav.nakup .nakup,
+nav.burzy .burzy,
 nav.coins .coins{
 background-color:#e35885;
 }
@@ -267,8 +267,8 @@ nav a {
     padding: 10px;
 }
 nav.home .home,
-nav.fiat .fiat,
-nav.card .card,
+nav.nakup .nakup,
+nav.burzy .burzy,
 nav.coins .coins,
 nav a.hover:hover {
     background-color: #dbe91e;
@@ -420,10 +420,16 @@ h1.site-title {
 .text-content > div > div {
   display: none;
 }
+.home-links {
+  padding: 10px !important;
+}
+.home-links * {
+  font-size: 11px;
+}
 .text-content > .home > .home,
 .text-content > .coins > .coins,
-.text-content > .card > .card,
-.text-content > .fiat > .fiat {
+.text-content > .burzy > .burzy,
+.text-content > .nakup > .nakup {
   display: block;
 }
 

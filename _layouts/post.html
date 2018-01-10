@@ -21,7 +21,9 @@
 
        <h2 class="single-title"><span>{{ page.title }}</span></h2>
 
-       <span class="post-author">Autor: {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %} | {{ page.date | date: "%d.%m.%Y" }}</span>
+       <span class="post-author">Autor: {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
+         | <a target="_blank" href="https://www.altcointrading.net/{{ page.enslug }}/">Originál v angličtině</a> 
+         | {{ page.date | date: "%d.%m.%Y" }}</span>
 
        {% if page.feature %}
        <div class="single-feature">

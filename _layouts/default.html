@@ -49,17 +49,15 @@
      </section>
     </div><!-- container -->
     <div class="col-md-4 col-sm-4 xs-margin-bottom-ten sidebar">
-      <section class="text-content">
+      <section class="text-content home-links">
         {% raw %}
-
-        <h4>Best crypto exchange in 2018?</h4>
-        <p style="text-align:center">Comments for section <b>{{ active }}</b></p>
+        <p style="text-align:center">Obchodování s kryptoměnami: <b>{{ active }}</b></p>
 
         <div v-bind:class="active">
           <div class="home" v-html="content.home"></div>
           <div class="coins" v-html="content.coins"></div>
-          <div class="card" v-html="content.card"></div>
-          <div class="fiat" v-html="content.fiat"></div>
+          <div class="nakup" v-html="content.nakup"></div>
+          <div class="burzy" v-html="content.burzy"></div>
         </div>
 
         {% endraw %}
@@ -106,15 +104,15 @@
 
 
     <script type="text/javascript">
-    var demo = new Vue({
+    var demo=new Vue({
     el: '#main',
     data: {
       active: 'home',
       content: {
-        home: '',
+        home: '...',
         coins: '',
-        card: '',
-        fiat: ''
+        burzy: '<h5>Nejlepší burzy na daytrading</h5> <p> Jedna z nejoblíbenějších trading platforem je Bitfinex. Ačkoli burza Bitfinexu v roce 2016 byla v roce 2016 <a rel="nofollow" href="https://en.wikipedia.org/wiki/Bitfinex_hack">hacknutá</a>, zůstala stále populární: uživatelské rozhraní nemá chybu, páka je k dispozici pro většinu trhů a máte také možnost p2p lendingu, když nechcete obchodovat. Nicméně v prosinci 2017 Bitfinex přestal přijímat nové uživatele, protože (jako většina crypto burz) je přetížený a nestíhá udržet krok s přílivem lidí.</p><p>Nejlepší možnosti pro rok 2018: </p> <ul> <li> <a rel="nofollow" target="_blank" href="https://www.binance.com/?ref=15980293">Binance</a> - uvádí pravidelně nové kryptoměny, má dva různé úrovně uživatelského rozhraní (základní a pokročilé) a nevyžaduje verifkaci, i když bez ní limituje výběry. </li> <li> <a rel="nofollow" target="_blank" href="https://mercatox.com/?referrer=137469">Mercatox </a> - méně známé místo, což znamená, že je méně přetíženo uživateli. Mercatox také rychle vypisuje nové kryptoměny. </li> <li> <a rel="nofollow" target="_blank" href="https://www.coinbase.com/join/564e7650f7cad400d90001ef"> GDAX </a> - budete se muset ověřit, ale GDAX je nejoblíbenější obchodní platformou v USA, takže trhy mají dobrou hloubku a dá se s nimi pracovat i co se týče arbitráží. </li> <li> <a rel="nofollow" target="_ blank" href="https://www.bitmex.com/register/iYQB44 ">BitMEX </a> - platforma pro pokročilé tradery. </li> </ul>',
+        nakup: '<h5>Nejlepší směnárny pro začátečníky</h5> <p>Když se nechcete zdržovat s verifikací na burze, můžete vždycky koupit bitcoin na <a rel="nofollow" target="_blank" href ="https://localbitcoins.com/?ref=4nq3"> Localbitcoins</a> a ten potom směnit za kryptoměnu podle vašeho výběru. Na jakékoliv jiné směnárně budete muset projít ověřením totožnosti. V závislosti na tom, kolik nových uživatelů se momentálně registruje, to může trvat i několik týdnů.</p> <p>Pokud vám nevadí čekání na ověření, nejlepší místa pro zakoupení kryptoměn jsou: </p> <ul><li><a rel="nofollow" target="_blank" href="https://www.coinbase.com/join/564e7650f7cad400d90001ef">Coinbase </a>, která také poskytuje webovou peněženku pro BTC, BCH, ETH a LTC.</li> <li><a rel="nofollow" target="_blank" href="https://coinmate.io?referral=UVdneFZXd3hiVTVaV2s5YVlXSnNlazV4Um5ScGR3PT0">CoinMate</a>, který vám umožní zakoupit BTC, LTC a BCH buď za eura nebo za české koruny.</li></ul>'
       },
       gridData: {
           index: "-",
@@ -133,7 +131,7 @@
     },
     filters: {
         moment: function(str) {
-          var d = new Date(str);
+          var d=new Date(str);
           if (moment(d).isValid() ) {
             return moment(d).format('MMMM Do \'YY, h:mm a') + " UTC";
           } else {
@@ -141,7 +139,7 @@
           }
         },
         bitcoins: function(str) {
-          var dp = Math.round(str * 100000000) / 100000000
+          var dp=Math.round(str * 100000000) / 100000000
           if (isNaN(dp)) {
             return "-"
           } else {
@@ -149,7 +147,7 @@
           }
         },
         percents: function(str) {
-          var dp = Math.round(str * 100000) / 100000
+          var dp=Math.round(str * 100000) / 100000
           if (isNaN(dp)) {
             return "-"
           } else {
@@ -159,50 +157,63 @@
     },
     methods: {
       makeActive: function(item){
-        this.active = item;
+        this.active=item;
       },
       getIndexes () {
-          var vm = this
+          var vm=this
           setInterval(function() {
           vm.$http.get("https://data.altcointrading.net/api/chartdata.json")
             .then(function (response) {
-              var arr = response.data.data
-              vm.gridData.index = arr[0].index
-              vm.gridData.hchange = ( arr[0].index - arr[11].index ) / arr[0].index
+              var arr=response.data.data
+              vm.gridData.index=arr[0].index
+              vm.gridData.hchange=( arr[0].index - arr[11].index ) / arr[0].index
             })
             .catch(function (error) {
-              vm.gridData = error
+              vm.gridData=error
             })
           }, 1000)
       },
       getCoins () {
-          var vm = this
+          var vm=this
           setInterval(function() {
             vm.$http.get("https://data.altcointrading.net/api/ticker.json")
               .then(function (response) {
-                var arr = response.data["BTC_ETH"]
-                 vm.gridData.eth_price = arr["last"]
-                 vm.gridData.eth_hchange = arr["percentChange"]
-                var arr = response.data["BTC_XMR"]
-                 vm.gridData.xmr_price = arr["last"]
-                 vm.gridData.xmr_hchange = arr["percentChange"]
-                var arr = response.data["BTC_LTC"]
-                  vm.gridData.ltc_price = arr["last"]
-                  vm.gridData.ltc_hchange = arr["percentChange"]
-                var arr = response.data["BTC_XRP"]
-                    vm.gridData.xrp_price = arr["last"]
-                    vm.gridData.xrp_hchange = arr["percentChange"]
-                var arr = response.data["BTC_BCH"]
-                    vm.gridData.bch_price = arr["last"]
-                    vm.gridData.bch_hchange = arr["percentChange"]
+                var arr=response.data["BTC_ETH"]
+                 vm.gridData.eth_price=arr["last"]
+                 vm.gridData.eth_hchange=arr["percentChange"]
+                var arr=response.data["BTC_XMR"]
+                 vm.gridData.xmr_price=arr["last"]
+                 vm.gridData.xmr_hchange=arr["percentChange"]
+                var arr=response.data["BTC_LTC"]
+                  vm.gridData.ltc_price=arr["last"]
+                  vm.gridData.ltc_hchange=arr["percentChange"]
+                var arr=response.data["BTC_XRP"]
+                    vm.gridData.xrp_price=arr["last"]
+                    vm.gridData.xrp_hchange=arr["percentChange"]
+                var arr=response.data["BTC_BCH"]
+                    vm.gridData.bch_price=arr["last"]
+                    vm.gridData.bch_hchange=arr["percentChange"]
               })
           }, 1000)
 
-        }
+      },
+      getFibs () {
+        var vm=this
+        vm.$http.get("https://www.altcointrading.net/fibs.json")
+          .then(function (response) {
+            var arr=response.data[0]
+            vm.content.home = '<h5>Na anglickém webu: <a target="_blank" href="' + arr["url"] + '">' + arr["title"] + '</a></h5><p style="text-align:center">Poslední analýza publikována '
+            vm.content.home += moment(arr["update"]).format('D.M.YYYY v hh:mm') + '</p><div class="blog-post-images">'
+            vm.content.home += '<a target="_blank" href="' + arr["url"] + '"><img src="' + arr["img"] + '"></a></div>'
+
+
+          })
+      }
     },
     mounted: function() {
         this.getIndexes()
         this.getCoins()
+        this.getFibs()
       }
     })
     </script>

@@ -8,7 +8,7 @@ date: 2018-01-07 12:23:00 +0100
 update: 2018-01-07 12:23:00 +0100
 
 
-author: altcointrading.net
+author: "karlvonbahnhof@altcointrading.net"
 author_name: KarlVonBahnhof
 
 
@@ -25,7 +25,7 @@ tickers: false
 title: "Review burzy Altcoin.io: Trading začátkem roku 2018, předběžné registrace otevřeny"
 description: "Nová burza s Joshem Olzsewiczem v týmu. Burza poběží kompletně na atomových swapech. Signup je už otevřen - můžete si atomový swap vyzkoušet na testnetu!"
 
-permalink: altcoinio
+permalink: altcoinio/
 enslug: altcoinio
 
 feature: "/editorial/theboss.jpeg"

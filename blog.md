@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: cat-blog
 
-title: All Posts
+title: Všechny příspěvky v altcointrading blogu
 published: true
 
 permalink: blog/

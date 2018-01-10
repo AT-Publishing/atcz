@@ -2,7 +2,7 @@ title: "Altcoin Trading"
 url: "https://altcointrading.cz"
 baseurl: ""
 
-author: "@_KarlvonBahnhof"
+author: "admin@altcointrading.cz"
 
 collections:
   press:
@@ -13,7 +13,7 @@ collections:
     permalink: /:collection/:slug
   strategy:
     output: true
-    permalink: /strategie/:slug
+    permalink: /strategie/:slug/
   fibs:
     output: true
     permalink: /:collection/:slug

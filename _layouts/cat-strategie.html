@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ {% include head.html %}
+  <body>
+   <div id="main" class="">
+
+    <nav class="home">
+      <h1 class="site-title">{{ site.title }}</h1>
+      <a href="/" class="home"><< Home</a>
+      <a href="#" class="back">{{ page.title }}</a> {{ page.date | date: "%d.%m.%Y" }}
+    </nav>
+
+   <div class="row no-gutters">
+
+    <div class="col-md-4 col-sm-4 xs-margin-bottom-ten sidebar single-sidebar">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="col-md-8 col-sm-8 xs-margin-bottom-ten table-patch">
+     <section class="single-content">
+
+       <h2 class="single-title"><span>{{ page.title }}</span></h2>
+
+       <div class="container-center">
+         <hr>
+          {{ site.banner.binance }}
+         <hr>
+       </div>
+      <div class="inside-content">
+            {{ content  }}
+      </div>
+
+
+     </section>
+    </div><!-- container -->
+
+    </div><!-- main -->
+
+
+    <div class="row blog">
+      <div class="col-md-12 ">
+        <h4>Na blogu:</h4>
+      </div>
+    </div>
+
+    {% include blog3.html %}
+
+    {% include footer.html %}
+
+
+
+    <script type="text/javascript">
+    var demo = new Vue({
+    el: '#main',
+    data: {
+      active: 'home'
+    },
+    methods: {
+      makeActive: function(item){
+        this.active = item;
+      }
+    }
+    })
+    </script>
+  </body>
+</html>

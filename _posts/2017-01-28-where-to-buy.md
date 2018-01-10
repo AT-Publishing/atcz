@@ -1,6 +1,9 @@
 ---
 layout: post
 
+author: "karlvonbahnhof@altcointrading.net"
+author_name: KarlVonBahnhof
+
 german: 'kryptowahrung-kaufen/'
 enslug: 'how-to-buy-altcoins'
 permalink: jak-koupit-kryptomeny/
