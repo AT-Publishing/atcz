@@ -9,7 +9,7 @@ enslug: 'how-to-buy-altcoins'
 permalink: jak-koupit-kryptomeny/
 
 update: 2017-12-21 15:56 +0100
-tags: ['popular', 'koupit-kryptoměny', 'krypto-burzy', 'kde-koupit-krypto', 'bitcoin']
+tags: ['koupit-kryptoměny', 'krypto-burzy', 'kde-koupit-krypto', 'bitcoin']
 comments: true
 
 

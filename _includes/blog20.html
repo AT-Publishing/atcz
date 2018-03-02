@@ -3,7 +3,7 @@
 <div class="row blog">
 
   {% for item in site.posts limit: 100 %}
-  <div class="col-md-6 col-sm-6 xs-margin-bottom-ten">
+  <div class="col-md-6 col-sm-6 col-xs-12 xs-margin-bottom-ten">
     <div class="blog-post twenty-posts">
       <div class="blog-post-images">
         <a href="/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}">
@@ -14,7 +14,7 @@
           <a href="/{% if item.permalink %}{{ item.permalink | prepend: site.baseurl }}{% else %}{{ item.slug | prepend: site.baseurl }}{% endif %}" class="post-title">
            {{ item.title }}
           </a>
-          <span class="post-author">Posted by {% if item.author %}{{ item.author }}{% else %}{{ site.author }}{% endif %} | {{ item.date | date: "%d.%m.%Y" }}</span>
+          <span class="post-author">Posted by {% if item.author_name %}{{ item.author_name }}{% else %}{{ site.author }}{% endif %} | {{ item.date | date: "%d.%m.%Y" }}</span>
           <p>{{ item.description }}</p>
         </div>
         <div class="separator-line"></div>

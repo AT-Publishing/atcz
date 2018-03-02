@@ -511,5 +511,60 @@ a:focus, a:hover {
   max-width: 100%
 }
 
+.newsletter label {
+      width: 100%;
+}
+.newsletter .button {
+  display: block;
+    text-align: center;
+    margin: 20px auto;
+    width: 110px;
+    padding: 5px;
+    background: #dce928;
+    border: 2px solid black;
+    color: black;
+}
+
+
+
+.post-social a {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+/**/
+
+
+
+/* responsive */
+
+@media (max-width: 667px) {
+  .text-content > div > div,
+  .blog-post,
+  .blog-post p {
+    text-align: center;
+  }
+  .separator-line,
+  .containter-center img {width: 100%}
+  .footer-social a {
+    margin: 25px;
+    color: #000;
+    width: 100%;
+    display: block;
+  }
+  h1.site-title {
+    position: relative;
+    left: 0;
+    font-size: 3rem;
+    top: 0px;
+    letter-spacing: -2px;
+  }
+
+
+
+}
+
+
+
 
 /**/

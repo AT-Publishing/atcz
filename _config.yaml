@@ -2,7 +2,9 @@ title: "Altcoin Trading"
 url: "https://altcointrading.cz"
 baseurl: ""
 
-author: "admin@altcointrading.cz"
+#| replace: '<a href="http', '<a rel="nofollow" target="_blank" href="http'
+
+author: "info@altcointrading.cz"
 
 collections:
   press:
@@ -57,7 +59,7 @@ ads:
   aadstall: '<iframe data-aa="114135" src="https://ad.a-ads.com/114135?size=120x600" scrolling="no" style="width:120px; height:600px; border:0px; padding:0;overflow:hidden" allowtransparency="true" frameborder="0"></iframe>'
   aads336: '<div class="containter-center"><iframe data-aa="165257" src="https://ad.a-ads.com/165257?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0;overflow:hidden" allowtransparency="true" frameborder="0"></iframe></div>'
   aadslong: "<iframe data-aa='334169' src='https://ad.a-ads.com/334169?size=728x90' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>"
-  lbc: '<div class="containter-center"><iframe frameborder="0" height="60" marginheight="0" marginwidth="0" scrolling="no" src="https://localbitcoins.com/affiliate-embed/half-banner?ref=4nq3" width="234"></iframe></div>'
+  lbc: '<iframe frameborder="0" height="60" marginheight="0" marginwidth="0" scrolling="no" src="https://localbitcoins.com/affiliate-embed/half-banner?ref=4nq3" width="234"></iframe>'
   pm: '<div class="containter-center"><a rel="nofollow" target="_blank" href="https://perfectmoney.is/?ref=7622697">
     <amp-img itemprop="image" src="/images/finance/perfectmoney-bitcoin.jpg" alt="Perfect Money Bitcoin" layout="responsive"
     data-original-width="468px" data-original-height="60px"  width="468px" height="60px"></amp-img></a></div>'
@@ -148,3 +150,5 @@ ads:
   <amp-img itemprop="image" src="/images/wallet/trezor.jpg" alt="Trezor Wallet for bitcoins and altcoins"
   data-original-width="350px" data-original-height="330px" layout="responsive" width="350px" height="330px">
   </amp-img></a>'
+
+mailchimp300: '<iframe style="border:none;width:400px;height:300px" src="https://amp2disqus.netlify.com/altcointrading/signup.html"></iframe>'

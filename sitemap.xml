@@ -12,9 +12,9 @@ navi:
 
     {% for page in site.pages %}{% unless page.navi.exclude == true %}
     <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
+        <loc>{{ site.url }}{{ site.baseurl }}{{ page.url }}</loc>
         {% if page.enslug %}
-        <xhtml:link rel="alternate" hreflang="cs" href="{{ site.url }}{{ page.url }}"/>
+        <xhtml:link rel="alternate" hreflang="cs" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.altcointrading.net/{{ page.enslug }}"/>
         {% endif %}
         {% if page.german %}
